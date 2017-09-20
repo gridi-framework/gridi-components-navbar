@@ -5,26 +5,26 @@
 .navbar {
     position: relative;
     width: 100%;
-    @if $gridi-component-navbar-background {
-        background: $gridi-component-navbar-background;
+    @if $gridi-components-navbar-background {
+        background: $gridi-components-navbar-background;
     }
-    @if variable-exists(gridi-component-navbar-background-for-screens) {
+    @if variable-exists(gridi-components-navbar-background-for-screens) {
         @each $screen-prefix, $sizes in get-screens-map() {
-            @if map-has-key($gridi-component-navbar-background-for-screens, $screen-prefix) {
+            @if map-has-key($gridi-components-navbar-background-for-screens, $screen-prefix) {
                 @media(min-width: get-screen-size($screen-prefix, min)) {
-                    background: map-get($gridi-component-navbar-background-for-screens, $screen-prefix);
+                    background: map-get($gridi-components-navbar-background-for-screens, $screen-prefix);
                 }
             }
         }
     }
 
     .navbar-row {
-        margin: auto floor(($gridi-component-navbar-columns-gutter / -2)) auto ceil(($gridi-component-navbar-columns-gutter / -2));
-        @if variable-exists(gridi-component-navbar-columns-gutter-for-screens) {
+        margin: auto floor(($gridi-components-navbar-columns-gutter / -2)) auto ceil(($gridi-components-navbar-columns-gutter / -2));
+        @if variable-exists(gridi-components-navbar-columns-gutter-for-screens) {
             @each $screen-prefix, $sizes in get-screens-map() {
-                @if map-has-key($gridi-component-navbar-columns-gutter-for-screens, $screen-prefix) {
+                @if map-has-key($gridi-components-navbar-columns-gutter-for-screens, $screen-prefix) {
                     @media(min-width: get-screen-size($screen-prefix, min)) {
-                        margin: auto floor((map-get($gridi-component-navbar-columns-gutter-for-screens, $screen-prefix) / -2)) auto ceil((map-get($gridi-component-navbar-columns-gutter-for-screens, $screen-prefix) / -2));
+                        margin: auto floor((map-get($gridi-components-navbar-columns-gutter-for-screens, $screen-prefix) / -2)) auto ceil((map-get($gridi-components-navbar-columns-gutter-for-screens, $screen-prefix) / -2));
                     }
                 }
             }
@@ -33,14 +33,14 @@
 
     .navbar-column {
         display: table-cell;
-        padding-left: ceil(($gridi-component-navbar-columns-gutter / 2));
-        padding-right: floor(($gridi-component-navbar-columns-gutter / 2));
-        @if variable-exists(gridi-component-navbar-columns-gutter-for-screens) {
+        padding-left: ceil(($gridi-components-navbar-columns-gutter / 2));
+        padding-right: floor(($gridi-components-navbar-columns-gutter / 2));
+        @if variable-exists(gridi-components-navbar-columns-gutter-for-screens) {
             @each $screen-prefix, $sizes in get-screens-map() {
-                @if map-has-key($gridi-component-navbar-columns-gutter-for-screens, $screen-prefix) {
+                @if map-has-key($gridi-components-navbar-columns-gutter-for-screens, $screen-prefix) {
                     @media(min-width: get-screen-size($screen-prefix, min)) {
-                        padding-left: ceil((map-get($gridi-component-navbar-columns-gutter-for-screens, $screen-prefix)) / 2);
-                        padding-right: floor((map-get($gridi-component-navbar-columns-gutter-for-screens, $screen-prefix) / 2));
+                        padding-left: ceil((map-get($gridi-components-navbar-columns-gutter-for-screens, $screen-prefix)) / 2);
+                        padding-right: floor((map-get($gridi-components-navbar-columns-gutter-for-screens, $screen-prefix) / 2));
                     }
                 }
             }
