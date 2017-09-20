@@ -1,0 +1,89 @@
+.navbar, .navbar .navbar-column {
+    @include property-by-navbar-height(height);
+}
+
+.navbar {
+    position: relative;
+    width: 100%;
+    @if $gridi-component-navbar-background {
+        background: $gridi-component-navbar-background;
+    }
+    @if variable-exists(gridi-component-navbar-background-for-screens) {
+        @each $screen-prefix, $sizes in get-screens-map() {
+            @if map-has-key($gridi-component-navbar-background-for-screens, $screen-prefix) {
+                @media(min-width: get-screen-size($screen-prefix, min)) {
+                    background: map-get($gridi-component-navbar-background-for-screens, $screen-prefix);
+                }
+            }
+        }
+    }
+
+    .navbar-row {
+        margin: auto floor(($gridi-component-navbar-columns-gutter / -2)) auto ceil(($gridi-component-navbar-columns-gutter / -2));
+        @if variable-exists(gridi-component-navbar-columns-gutter-for-screens) {
+            @each $screen-prefix, $sizes in get-screens-map() {
+                @if map-has-key($gridi-component-navbar-columns-gutter-for-screens, $screen-prefix) {
+                    @media(min-width: get-screen-size($screen-prefix, min)) {
+                        margin: auto floor((map-get($gridi-component-navbar-columns-gutter-for-screens, $screen-prefix) / -2)) auto ceil((map-get($gridi-component-navbar-columns-gutter-for-screens, $screen-prefix) / -2));
+                    }
+                }
+            }
+        }
+    }
+
+    .navbar-column {
+        display: table-cell;
+        padding-left: ceil(($gridi-component-navbar-columns-gutter / 2));
+        padding-right: floor(($gridi-component-navbar-columns-gutter / 2));
+        @if variable-exists(gridi-component-navbar-columns-gutter-for-screens) {
+            @each $screen-prefix, $sizes in get-screens-map() {
+                @if map-has-key($gridi-component-navbar-columns-gutter-for-screens, $screen-prefix) {
+                    @media(min-width: get-screen-size($screen-prefix, min)) {
+                        padding-left: ceil((map-get($gridi-component-navbar-columns-gutter-for-screens, $screen-prefix)) / 2);
+                        padding-right: floor((map-get($gridi-component-navbar-columns-gutter-for-screens, $screen-prefix) / 2));
+                    }
+                }
+            }
+        }
+        vertical-align: middle;
+    }
+
+    .navbar-row,
+    .navbar-column {
+        @include display-flex();
+        @include flex-flow(row, nowrap);
+    }
+
+    .navbar-row {
+        @include align-items(stretch);
+        @include justify-content(space-between);
+    }
+
+    .navbar-column {
+        @include align-items(center);
+        @include justify-content(center);
+    }
+
+    .navbar-elem-to-start {
+        float: left;
+        @include order(-1);
+    }
+
+    .navbar-elem-to-end {
+        float: right;
+        @include order(2);
+    }
+
+    .navbar-elem-grow {
+        @include flex(1);
+    }
+}
+
+@include supports-flex() {
+    .navbar {
+        .navbar-elem-to-start,
+        .navbar-elem-to-end {
+            float: none;
+        }
+    }
+}
