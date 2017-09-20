@@ -1,5 +1,5 @@
 {
-    "name": "gridi-component-navbar",
+    "name": "gridi-components-navbar",
     "description": "",
     "main": "",
     "authors": [
@@ -14,7 +14,7 @@
         "navigation",
         "navbar"
     ],
-    "homepage": "https://github.com/gridi-framework/gridi-component-navbar",
+    "homepage": "https://github.com/gridi-framework/gridi-components-navbar",
     "ignore": [
         "**/.*",
         "**/*.md",
