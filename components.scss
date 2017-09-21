@@ -8,7 +8,7 @@
     @if $gridi-components-navbar-background {
         background: $gridi-components-navbar-background;
     }
-    @if variable-exists(gridi-components-navbar-background-for-screens) {
+    @if is-map($gridi-components-navbar-background-for-screens) {
         @each $screen-prefix, $sizes in get-screens-map() {
             @if map-has-key($gridi-components-navbar-background-for-screens, $screen-prefix) {
                 @media(min-width: get-screen-size($screen-prefix, min)) {
@@ -20,7 +20,7 @@
 
     .navbar-row {
         margin: auto floor(($gridi-components-navbar-columns-gutter / -2)) auto ceil(($gridi-components-navbar-columns-gutter / -2));
-        @if variable-exists(gridi-components-navbar-columns-gutter-for-screens) {
+        @if is-map($gridi-components-navbar-columns-gutter-for-screens) {
             @each $screen-prefix, $sizes in get-screens-map() {
                 @if map-has-key($gridi-components-navbar-columns-gutter-for-screens, $screen-prefix) {
                     @media(min-width: get-screen-size($screen-prefix, min)) {
@@ -35,7 +35,7 @@
         display: table-cell;
         padding-left: ceil(($gridi-components-navbar-columns-gutter / 2));
         padding-right: floor(($gridi-components-navbar-columns-gutter / 2));
-        @if variable-exists(gridi-components-navbar-columns-gutter-for-screens) {
+        @if is-map($gridi-components-navbar-columns-gutter-for-screens) {
             @each $screen-prefix, $sizes in get-screens-map() {
                 @if map-has-key($gridi-components-navbar-columns-gutter-for-screens, $screen-prefix) {
                     @media(min-width: get-screen-size($screen-prefix, min)) {

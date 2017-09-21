@@ -1,6 +1,6 @@
 @mixin property-by-navbar-height($property) {
     #{$property}: $gridi-components-navbar-height;
-    @if variable-exists(gridi-components-navbar-height-for-screens) {
+    @if is-map($gridi-components-navbar-height-for-screens) {
         @each $screen-prefix, $sizes in get-screens-map() {
             @if map-has-key($gridi-components-navbar-height-for-screens, $screen-prefix) {
                 @media(min-width: get-screen-size($screen-prefix, min)) {

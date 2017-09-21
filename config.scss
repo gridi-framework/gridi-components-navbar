@@ -6,6 +6,7 @@ $gridi-components-navbar-height-for-screens: (
 
 $gridi-components-navbar-background: $document-background-color !default;
 //Defined background for each screens.
+$gridi-components-navbar-background-for-screens: () !default;
 /*
 $gridi-components-navbar-background-for-screens: (
     s1: $primary-color,
