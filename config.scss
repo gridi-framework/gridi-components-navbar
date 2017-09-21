@@ -24,5 +24,5 @@ $gridi-components-navbar-columns-gutter-for-screens: (
 ) !default;
 */
 
-$gridi-components-navbar-mobile-wrapper-class: '.navbar-mobile-wrapper';
-$gridi-components-navbar-mobile-limit-screen-size-prefix: s5;
+$gridi-components-navbar-mobile-wrapper-class: '.navbar-mobile-wrapper' !default;
+$gridi-components-navbar-mobile-limit-screen-size-prefix: s5 !default;
