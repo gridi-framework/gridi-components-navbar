@@ -4,7 +4,7 @@ $gridi-components-navbar-height-for-screens: (
     s5: 95px,
 ) !default;
 
-$gridi-components-navbar-background: $document-background-color !default;
+$gridi-components-navbar-background: yellow;//$document-background-color !default;
 //Defined background for each screens.
 $gridi-components-navbar-background-for-screens: () !default;
 /*
@@ -14,15 +14,8 @@ $gridi-components-navbar-background-for-screens: (
 ) !default;
 */
 
-$gridi-components-navbar-columns-gutter: $elements-gutter !default;
-$gridi-components-navbar-columns-gutter-for-screens: $elements-gutter-for-screens !default;
-//Defined padding between columns for each screens.
-/*
-$gridi-components-navbar-columns-gutter-for-screens: (
-    s1: 40px,
-    ...
-) !default;
-*/
-
 $gridi-components-navbar-mobile-wrapper-class: '.navbar-mobile-wrapper' !default;
 $gridi-components-navbar-mobile-limit-screen-size-prefix: s5 !default;
+
+$gridi-components-navbar-support-old-browsers: $support-old-browsers !default;
+$gridi-components-navbar-support-old-browser-column-vertical-align: middle !default;
